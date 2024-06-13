@@ -19,3 +19,22 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
+
+
+### 9. Git and GitHub
+
+1. Initialize a git repository:
+    ```sh
+    git init
+    git add .
+    git commit -m "Initial commit"
+    ```
+
+2. Create a new repository on GitHub and push:
+    ```sh
+    git remote add origin https://github.com/your-username/bookstore-api.git
+    git push -u origin master
+    ```
+
+This setup provides a fully functional RESTful API for a bookstore with user authentication, CRUD operations, and Swagger documentation.
+
