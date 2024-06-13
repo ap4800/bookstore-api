@@ -1,0 +1,141 @@
+swagger: '2.0'
+info:
+  description: "API documentation for Bookstore"
+  version: "1.0.0"
+  title: "Bookstore API"
+host: "localhost:5000"
+basePath: "/api"
+schemes:
+  - "http"
+paths:
+  /auth/register:
+    post:
+      tags:
+        - "auth"
+      summary: "Register a new user"
+      parameters:
+        - name: "body"
+          in: "body"
+          required: true
+          schema:
+            type: "object"
+            properties:
+              username:
+                type: "string"
+              password:
+                type: "string"
+      responses:
+        200:
+          description: "Successful registration"
+  /auth/login:
+    post:
+      tags:
+        - "auth"
+      summary: "Login a user"
+      parameters:
+        - name: "body"
+          in: "body"
+          required: true
+          schema:
+            type: "object"
+            properties:
+              username:
+                type: "string"
+              password:
+                type: "string"
+      responses:
+        200:
+          description: "Successful login"
+  /books:
+    get:
+      tags:
+        - "books"
+      summary: "Get list of books"
+      responses:
+        200:
+          description: "Successful operation"
+    post:
+      tags:
+        - "books"
+      summary: "Create a new book"
+      parameters:
+        - name: "body"
+          in: "body"
+          required: true
+          schema:
+            type: "object"
+            properties:
+              title:
+                type: "string"
+              author:
+                type: "string"
+              published_date:
+                type: "string"
+              isbn:
+                type: "string"
+              pages:
+                type: "integer"
+              cover:
+                type: "string"
+              language:
+                type: "string"
+      responses:
+        201:
+          description: "Book created successfully"
+  /books/{book_id}:
+    get:
+      tags:
+        - "books"
+      summary: "Get a single book"
+      parameters:
+        - name: "book_id"
+          in: "path"
+          required: true
+          type: "integer"
+      responses:
+        200:
+          description: "Successful operation"
+    put:
+      tags:
+        - "books"
+      summary: "Update a book"
+      parameters:
+        - name: "book_id"
+          in: "path"
+          required: true
+          type: "integer"
+        - name: "body"
+          in: "body"
+          required: true
+          schema:
+            type: "object"
+            properties:
+              title:
+                type: "string"
+              author:
+                type: "string"
+              published_date:
+                type: "string"
+              isbn:
+                type: "string"
+              pages:
+                type: "integer"
+              cover:
+                type: "string"
+              language:
+                type: "string"
+      responses:
+        200:
+          description: "Book updated successfully"
+    delete:
+      tags:
+        - "books"
+      summary: "Delete a book"
+      parameters:
+        - name: "book_id"
+          in: "path"
+          required: true
+          type: "integer"
+      responses:
+        204:
+          description: "Book deleted successfully"
